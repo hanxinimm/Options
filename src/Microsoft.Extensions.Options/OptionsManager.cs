@@ -38,5 +38,12 @@ namespace Microsoft.Extensions.Options
             // Store the options in our instance cache
             return _cache.GetOrAdd(name, () => _factory.Create(name));
         }
+
+        public virtual TOptions GetOrNull(string name)
+        {
+            name = name ?? Options.DefaultName;
+            return _cache.GetOrNull(name);
+        }
+
     }
 }

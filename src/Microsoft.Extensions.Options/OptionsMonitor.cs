@@ -64,6 +64,12 @@ namespace Microsoft.Extensions.Options
             return _cache.GetOrAdd(name, () => _factory.Create(name));
         }
 
+        public virtual TOptions GetOrNull(string name)
+        {
+            name = name ?? Options.DefaultName;
+            return _cache.GetOrNull(name);
+        }
+
         /// <summary>
         /// Registers a listener to be called whenever TOptions changes.
         /// </summary>

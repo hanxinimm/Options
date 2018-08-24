@@ -19,6 +19,14 @@ namespace Microsoft.Extensions.Options
         /// <returns>The options instance.</returns>
         TOptions GetOrAdd(string name, Func<TOptions> createOptions);
 
+
+        /// <summary>
+        /// Gets a named options instance, or null.
+        /// </summary>
+        /// <param name="name">The name of the options instance.</param>
+        /// <returns>The options instance.</returns>
+        TOptions GetOrNull(string name);
+
         /// <summary>
         /// Tries to adds a new option to the cache, will return false if the name already exists.
         /// </summary>

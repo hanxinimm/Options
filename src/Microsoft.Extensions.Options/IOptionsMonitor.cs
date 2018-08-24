@@ -22,6 +22,11 @@ namespace Microsoft.Extensions.Options
         TOptions Get(string name);
 
         /// <summary>
+        /// Returns a configured TOptions instance with the given name.
+        /// </summary>
+        TOptions GetOrNull(string name);
+
+        /// <summary>
         /// Registers a listener to be called whenever a named TOptions changes.
         /// </summary>
         /// <param name="listener">The action to be invoked when TOptions has changed.</param>
